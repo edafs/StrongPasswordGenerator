@@ -13,12 +13,18 @@ def _initWordContents():
 # Global Variables.
 allWords = _initWordContents();
 delimiters = ["~", "_", "-", "+", ",", ".", "\\", "/", "<", ">", "^", "&", "$", "%", "#", "@", "*", "!"];
+secureRandom = random.SystemRandom();
 
 # Gets a random word from the `eff_large_wordlist.txt` file.
-def getWord():
-	randomWord = random.choice(allWords);
-	return randomWord[:-1];
-
+def getWord(): 
+	randomWord = secureRandom.choice(allWords);
+	return randomlyCapitalize(randomWord[:-1]);
+	
 # Gets a random delimiter.
 def getDelimiter():
-	return random.choice(delimiters);
+	return secureRandom.choice(delimiters);
+
+# Decides to randomly capitalize the word or not, doubles the choices.
+def randomlyCapitalize(_word):
+	wordChoices = [_word.capitalize(), _word];
+	return secureRandom.choice(wordChoices);
