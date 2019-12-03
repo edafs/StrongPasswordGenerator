@@ -10,11 +10,11 @@ def generatePassword(_word):
 	password += _delim + getWord() + _delim;
 	return password + str(len(password));
 
-def getEnthropy(_word, _password):
+def getEnthropy(_word):
 	wordEnthropy = math.pow(52,len(_word));
 	passwordEnthropy = math.pow(15552,2);
-	passwordEnthropy *= math.pow(12,3);
-	passwordEnthropy *= math.pow(18,2);
+	passwordEnthropy *= math.pow(18,3);
+	passwordEnthropy *= math.pow(10,2);
 	return math.log((wordEnthropy * passwordEnthropy), 2);
 
 main();
@@ -25,4 +25,4 @@ password = generatePassword(inputWord);
 print "This will be your password:";
 print "\t" + password;
 print "The enthropy is rated as the following:";
-print "\t" + str(getEnthropy(inputWord, password));
+print "\t" + str(getEnthropy(inputWord));
