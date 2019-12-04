@@ -3,9 +3,9 @@ import random;
 
 # Get all the words from text file.
 # The word list is originally found here:
-# https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
+# https://www.eff.org/files/2016/07/18/eff_small_wordlist1.txt
 def _initWordContents():
-	wordListFileStream = open('eff_large_wordlist.txt','r');
+	wordListFileStream = open('eff_small_wordlist.txt','r');
 	fileContents = wordListFileStream.readlines();
 	wordListFileStream.close();
 	return fileContents;
@@ -15,7 +15,7 @@ allWords = _initWordContents();
 delimiters = ["~", "_", "-", "+", ",", ".", "\\", "/", "<", ">", "^", "&", "$", "%", "#", "@", "*", "!"];
 secureRandom = random.SystemRandom();
 
-# Gets a random word from the `eff_large_wordlist.txt` file.
+# Gets a random word from allWords
 def getWord(): 
 	randomWord = secureRandom.choice(allWords);
 	return randomlyCapitalize(randomWord[:-1]);
