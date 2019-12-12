@@ -9,13 +9,15 @@
 	- Install on macOS:
 		- Run: `sudo easy_install pip`
 	- Install on Ubuntu:
-		- Run: `sudo apt-get install python-pip`
+		- Run: `sudo apt-get install python3-pip`
 	- Install on Windows:
 		- Download this script: [get-pip.py](https://bootstrap.pypa.io/get-pip.py)
 		- Run: `python get-pip.py`
 - You need termcolor:
-	- Install on MacOS or Ubuntu:
+	- Install on MacOS:
 		- run `pip install termcolor`
+	- Install on Ubuntu:
+		- run `pip3 install termcolor`
 	- Install on Windows:
 		- run `python -m pip install termcolor`
 
